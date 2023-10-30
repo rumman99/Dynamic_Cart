@@ -6,10 +6,10 @@ function increment(quantity, Price, phonePriceIncrement){
 };
 
 // Function For Decrement//
-function decrement(quentity, price, phonePriceDecrement){
-    if(document.getElementById(quentity).value>1){
-        let phoneValue= document.getElementById(quentity).value--;
-        document.getElementById(quentity).innerText=phoneValue;
+function decrement(quantity, price, phonePriceDecrement){
+    if(document.getElementById(quantity).value>1){
+        let phoneValue= document.getElementById(quantity).value--;
+        document.getElementById(quantity).innerText=phoneValue;
         document.getElementById(price).innerText=document.getElementById(price).innerText-phonePriceDecrement;
     }
     else{
@@ -67,3 +67,28 @@ document.getElementById('caseMinus').addEventListener('click', function(){
     subTotalPrice("caseValue", "phonePrice", 59);
     totalPrice("subTotalPrice", taxCalculate);
 });
+
+
+
+// Remove Item From Cart//
+function removeCart(removeItem){
+    if(removeItem=='remove1'){
+    document.getElementById(removeItem).addEventListener("click", function(){
+        const child = document.getElementById('itemSection')
+        child.parentNode.removeChild(child);
+    });
+    }
+    else{
+    document.getElementById(removeItem).addEventListener("click", function(){
+        const child = document.getElementById('itemSection');
+        child.parentElement.remove();
+        });
+    }
+}
+
+removeCart('remove1');
+removeCart('remove2');
+
+
+
+
